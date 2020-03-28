@@ -10,6 +10,7 @@ jobs:
       - id: download_msi
         run: |
           Write-Output "Test"
+          echo "Test 2"
           $msiUrl = "https://mtgarena.downloads.wizards.com/Live/Windows32/versions/2133.772345/MTGAInstaller_0.1.2133.772345.msi"
           $fileName = (([uri]$msiUrl).Segments)[-1]
           $msiFilePath = "$Env:GITHUB_WORKSPACE\..\$fileName"
