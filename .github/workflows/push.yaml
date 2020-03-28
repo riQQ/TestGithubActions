@@ -17,6 +17,7 @@ jobs:
           $msiFilePath = "$Env:GITHUB_WORKSPACE\..\$fileName"
           Write-Output $msiFilePath
           echo "::set-output name=msiFilePath::$msiFilePath"
+          (New-Object System.Net.WebClient).DownloadFile($msiUrl, $msiFilePath)
       - run: |
           Write-Output "${{ steps.download_msi.outputs.msiFilePath }}"
 
