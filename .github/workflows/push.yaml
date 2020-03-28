@@ -9,6 +9,7 @@ jobs:
     steps:
       - id: download_msi
         run: |
+          Get-Command
           Write-Output "Test"
           echo "Test 2"
           $msiUrl = "https://mtgarena.downloads.wizards.com/Live/Windows32/versions/2133.772345/MTGAInstaller_0.1.2133.772345.msi"
