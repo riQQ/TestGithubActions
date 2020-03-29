@@ -7,6 +7,9 @@ jobs:
     name: Download file
     runs-on: windows-2019
     steps:
+      - run: |
+          echo "Test"
+          WriteOutput
       - id: download_msi
         run: |
           Write-Output "Test"
