@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: |
           echo "Test"
-          WriteOutput "Test2"
+          Write-Output "Test2"
       - id: download_msi
         run: |
           Write-Output "Test"
