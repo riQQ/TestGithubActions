@@ -1,6 +1,8 @@
 name: Download file
 on:
-  push
+  push:
+    paths:
+      - './.github/workflows/push.yaml'
 
 jobs:
   downloadJob:
@@ -9,7 +11,7 @@ jobs:
     steps:
       - run: |
           echo "Test"
-          WriteOutput
+          WriteOutput "Test2"
       - id: download_msi
         run: |
           Write-Output "Test"
