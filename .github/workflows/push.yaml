@@ -2,7 +2,7 @@ name: Download file
 on:
   push:
     paths:
-      - './.github/workflows/push.yaml'
+      - '.github/workflows/push.yaml'
 
 jobs:
   downloadJob:
