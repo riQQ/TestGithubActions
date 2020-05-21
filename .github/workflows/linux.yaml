@@ -11,7 +11,7 @@ jobs:
     steps:
       - id: set_var
         run: |
-          echo "{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" | tee package.json
+          echo "{\"project\":\"foo\",\"config\":\"Debug\"}" | tee package.json
           content=`cat package.json`
           echo "::set-output name=packageJson::$content"
       - run: |
