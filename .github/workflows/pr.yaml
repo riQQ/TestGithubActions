@@ -3,12 +3,16 @@ on:
     types: [opened, closed, reopened]
         
 jobs:
-  prJob:
+  prJob:    
     name: Print event
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - run: |
-          githubEvent="${{github.event}}"
+          githubEvent="${{toJson(github.event)}}"
           githubEvent="${githubEvent//'%'/'%25'}"
           githubEvent="${githubEvent//$'\n'/'%0A'}"
           githubEvent="${githubEvent//$'\r'/'%0D'}" 
