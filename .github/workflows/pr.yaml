@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          githubEvent="${{fromJson(github.event)}}"
+          githubEvent="${{github.event}}"
           githubEvent="${githubEvent//'%'/'%25'}"
           githubEvent="${githubEvent//$'\n'/'%0A'}"
           githubEvent="${githubEvent//$'\r'/'%0D'}" 
