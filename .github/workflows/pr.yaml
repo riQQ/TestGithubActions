@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "{{fromJson(github.event)}}"
+          echo "${{fromJson(github.event)}}"
           echo Test
