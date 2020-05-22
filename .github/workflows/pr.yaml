@@ -1,0 +1,11 @@
+on:
+    pull_requeste
+        types: [opened, closed, reopened]
+        
+jobs:
+  downloadJob:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{fromJson(github.event)}}"
