@@ -3,8 +3,8 @@ on:
     types: [opened, closed, reopened]
         
 jobs:
-  downloadJob:
-    name: Test
+  prJob:
+    name: Print event
     runs-on: ubuntu-latest
     steps:
       - run: |
