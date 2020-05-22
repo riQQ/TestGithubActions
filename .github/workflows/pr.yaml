@@ -1,6 +1,6 @@
 on:
-    pull_requeste
-        types: [opened, closed, reopened]
+  pull_request:
+    types: [opened, closed, reopened]
         
 jobs:
   downloadJob:
