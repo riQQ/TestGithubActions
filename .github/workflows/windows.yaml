@@ -11,6 +11,7 @@ jobs:
     steps:      
       - name: Commit proto
         run: |
+          git status
           Copy-Item "${{steps.extract-proto.outputs.protoPath}}" -Destination "messages.proto"
           # git config --global user.name 'riQQ'
           # git config --global user.email 'riQQ@users.noreply.github.com'
