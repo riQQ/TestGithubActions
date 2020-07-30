@@ -9,6 +9,8 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          uuidgen
       - id: set_var
         run: |
           echo "{\"project\":\"foo\",\"config\":\"Debug\"}" | tee package.json
