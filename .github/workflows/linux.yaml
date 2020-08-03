@@ -11,6 +11,7 @@ jobs:
     steps:
       - run: |
           uuidgen
+          pwd
           ls
       - id: set_var
         run: |
