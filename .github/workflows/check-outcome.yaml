@@ -8,15 +8,17 @@ jobs:
   mainJob:
     name: Test
     runs-on: ubuntu-latest
-    continue-on-error: true
+    
     steps:      
       - name: Step A
+        continue-on-error: true
         id: seedBuild
         run: |
           echo "failing on purpose"
           exit 1
 
       - name: Step B
+        continue-on-error: true
         id: allSteps
         run: |
           echo "test"
