@@ -9,6 +9,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - continue-on-error: true
       - name: Step A
         id: seedBuild
         run: |
