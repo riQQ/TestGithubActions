@@ -8,8 +8,8 @@ jobs:
   mainJob:
     name: Test
     runs-on: ubuntu-latest
-    steps:
-      - continue-on-error: true
+    continue-on-error: true
+    steps:      
       - name: Step A
         id: seedBuild
         run: |
