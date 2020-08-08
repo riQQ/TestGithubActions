@@ -17,7 +17,6 @@ jobs:
           exit 1
 
       - name: Step B
-        if: ${{ always() }}
         id: allSteps
         run: |
           echo "test"
@@ -25,4 +24,4 @@ jobs:
       - name: Debug Step Failure
         run: |
           echo "******** Job Logs from ********"
-        if: "${{ always() && (steps.seedBuild.outcome == 'failure' || steps.allSteps.outcome == 'failure') }}"
+        if: ${{ always() && (steps.seedBuild.outcome == 'failure' || steps.allSteps.outcome == 'failure') }}
