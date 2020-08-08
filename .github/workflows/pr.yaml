@@ -15,6 +15,7 @@ jobs:
           echo "${{ toJson(github.event) }}"
           echo "${{ github.event.action }}"
       - run: |
+          echo "${{github.pull_request.number}}"
           githubEvent="${{toJson(github.event.action)}}"
           githubEvent="${githubEvent//'%'/'%25'}"
           githubEvent="${githubEvent//$'\n'/'%0A'}"
