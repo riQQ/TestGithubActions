@@ -11,14 +11,13 @@ jobs:
     
     steps:      
       - name: Step A
-        continue-on-error: true
         id: seedBuild
         run: |
           echo "failing on purpose"
           exit 1
 
       - name: Step B
-        continue-on-error: true
+        if: ${{ always() }}
         id: allSteps
         run: |
           echo "test"
@@ -26,4 +25,4 @@ jobs:
       - name: Debug Step Failure
         run: |
           echo "******** Job Logs from ********"
-        if: "${{ steps.seedBuild.outcome == 'failure' || steps.allSteps.outcome == 'failure' }}"
+        if: "${{ always() && (steps.seedBuild.outcome == 'failure' || steps.allSteps.outcome == 'failure') }}"
