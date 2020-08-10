@@ -3,7 +3,7 @@ name: default
 on:
   push:
     branches:
-    - '.github/workflows/yaml-identation.yaml'
+      - '.github/workflows/yaml-identation.yaml'
     
 jobs:
   testJob:
