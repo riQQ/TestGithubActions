@@ -1,0 +1,16 @@
+name: Checkout workflow
+on:
+  push:
+    paths:
+    - '.github/workflows/checkout.yaml'
+
+jobs:
+  checkoutJob:
+    name: Checkout Job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - run: |
+        git diff-tree --no-commit-id -r HEAD
