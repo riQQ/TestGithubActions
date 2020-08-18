@@ -13,6 +13,9 @@ jobs:
           uuidgen
           pwd
           ls
+      - run: |
+          git config --global --get user.name
+          git config --global --get user.email
       - id: set_var
         run: |
           echo "{\"project\":\"foo\",\"config\":\"Debug\"}" | tee package.json
