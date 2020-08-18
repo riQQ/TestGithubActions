@@ -14,6 +14,7 @@ jobs:
           pwd
           ls
       - run: |
+          git config --list --show-origin
           git config --global --get user.name
           git config --global --get user.email
       - id: set_var
