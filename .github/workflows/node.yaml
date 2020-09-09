@@ -1,0 +1,19 @@
+name: Test node on linux job
+on:
+  push:
+    paths:
+    - '.github/workflows/node.yaml'
+
+jobs:
+  testJob:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        node -v
+    - name: Setup Node 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - run: |
+        node -v
