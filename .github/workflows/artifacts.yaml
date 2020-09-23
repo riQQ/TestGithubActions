@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          mkdir –p debug/infrastructure
+          mkdir –p ./debug/infrastructure
           uuidgen > debug/infrastructure/file.txt
-          mkdir –p debug/scripts
+          mkdir –p ./debug/scripts
           uuidgen > debug/scripts/file.txt
-          mkdir –p debug/function_packages/fa1
+          mkdir –p ./debug/function_packages/fa1
           uuidgen > debug/function_packages/fa1/file.txt
           ls
       - name: publish artifact
