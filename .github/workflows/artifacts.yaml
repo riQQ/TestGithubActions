@@ -11,6 +11,7 @@ jobs:
     steps:
       - run: |
           pwd
+          mkdir test
           mkdir –p ./debug/infrastructure
           uuidgen > debug/infrastructure/file.txt
           mkdir –p ./debug/scripts
