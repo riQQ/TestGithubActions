@@ -12,7 +12,7 @@ jobs:
       - run: |
           pwd
           mkdir test
-          mkdir –p bladebug/blainfrastructure
+          sudo mkdir –p bladebug/blainfrastructure
           uuidgen > debug/infrastructure/file.txt
           mkdir –p ./debug/scripts
           uuidgen > debug/scripts/file.txt
