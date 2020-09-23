@@ -11,8 +11,9 @@ jobs:
     steps:
       - run: |
           pwd
-          mkdir test
-          sudo mkdir –p bladebug/blainfrastructure
+          mkdir --version
+          mkdir -v test
+          sudo mkdir –pv bladebug/blainfrastructure
           uuidgen > debug/infrastructure/file.txt
           mkdir –p ./debug/scripts
           uuidgen > debug/scripts/file.txt
