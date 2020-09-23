@@ -9,6 +9,11 @@ jobs:
     name: Upload artifacts
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
+        run: |
+          echo "a"
+          mkdir -pv a/b
+          echo "b"        
       - run: |
           pwd
           mkdir --version
