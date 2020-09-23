@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          pwd
           mkdir –p ./debug/infrastructure
           uuidgen > debug/infrastructure/file.txt
           mkdir –p ./debug/scripts
