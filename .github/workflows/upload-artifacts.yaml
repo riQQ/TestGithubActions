@@ -1,0 +1,26 @@
+name: Upload artifacts workflow
+on:
+  push:
+    paths:
+      - '.github/workflows/upload-artifacts.yaml'
+
+jobs:
+  artifactJob:
+    name: Upload artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          pwd
+          mkdir -pv debug/infrastructure
+          uuidgen > debug/infrastructure/file.txt
+          mkdir –p debug/scripts
+          uuidgen > debug/scripts/file.txt
+          ls
+      - name: publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            "**"
+          name: files-${{github.run_number}}
+          
