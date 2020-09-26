@@ -3,6 +3,7 @@ on:
   push:
     paths:
     - '.github/workflows/use-composite-action.yaml'
+  workflow_dispatch:
 
 jobs:
   job:
