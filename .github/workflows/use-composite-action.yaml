@@ -1,0 +1,11 @@
+name: Use composite action
+on:
+  push:
+    paths:
+    - '.github/workflows/use-composite-action.yaml'
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ./.github/workflows/composite-run-steps-action
