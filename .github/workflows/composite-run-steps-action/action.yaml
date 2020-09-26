@@ -3,6 +3,6 @@ description: "Checks out the repository and does something"
 runs:
   using: "composite"
   steps: 
-  - run |
+  - run: |
       echo "Executing composite run steps action"
     shell: bash
