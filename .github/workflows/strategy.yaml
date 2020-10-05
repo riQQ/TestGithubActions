@@ -20,3 +20,7 @@ jobs:
     needs: matrixJob
     steps:
     - run: echo "Another Job"
+    - name: Dump needs context
+      env:
+        ACTIONS_NEEDS: ${{ toJson(needs) }}
+      run: echo "$ACTIONS_NEEDS"
