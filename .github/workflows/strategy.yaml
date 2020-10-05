@@ -1,0 +1,21 @@
+name: Strategy workflow
+on:
+  push:
+    paths:
+      - '.github/workflows/strategy.yaml'
+
+jobs:
+  matrixJob:
+    name: 'NodeJS ${{ matrix.fruit }}'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [strawberry, banana, apple]
+
+    steps:
+      - run: echo "::set-output name=action_fruit::${{ matrix.fruit }}"
+
+  anotherJob:
+    needs: matrixJob
+    steps:
+    - run: echo "Another Job"
