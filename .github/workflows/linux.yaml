@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo "${GITHUB_REF#refs/heads/}"
           uuidgen
           pwd
           ls
