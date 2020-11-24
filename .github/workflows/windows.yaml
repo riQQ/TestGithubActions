@@ -7,8 +7,9 @@ on:
 jobs:
   buildjob:
     name: Get latest MTGA version
-    runs-on: windows-2019
-    steps:      
+    runs-on: windows-latest
+    steps:
+      - run: echo ${{github.workspace}}
       - name: Commit proto
         run: |
           Get-Location
