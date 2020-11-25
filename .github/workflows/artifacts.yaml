@@ -25,7 +25,9 @@ jobs:
           mkdir -p ./debug/function_packages/fa1
           uuidgen > debug/function_packages/fa1/file.txt
           mkdir -p upload/test/AB/Debug
+          echo "AB" > upload/test/AB/Debug/AB.txt
           mkdir -p upload/test/CD/Debug
+          echo "CD" > upload/test/CD/Debug/CD.txt
           ls
       - name: publish artifact
         uses: actions/upload-artifact@v2
