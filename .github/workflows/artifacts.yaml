@@ -18,13 +18,13 @@ jobs:
           pwd
           mkdir --version
           mkdir -v test
-          sudo mkdir –pv bladebug/blainfrastructure
+          sudo mkdir -pv bladebug/blainfrastructure
           uuidgen > debug/infrastructure/file.txt
-          mkdir –p ./debug/scripts
+          mkdir -p ./debug/scripts
           uuidgen > debug/scripts/file.txt
-          mkdir –p ./debug/function_packages/fa1
+          mkdir -p ./debug/function_packages/fa1
           uuidgen > debug/function_packages/fa1/file.txt
-          ls
+          
       - name: publish artifact
         uses: actions/upload-artifact@v2
         with:
