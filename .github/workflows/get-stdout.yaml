@@ -1,0 +1,21 @@
+name: Get stdout
+on:
+  push:
+    paths:
+      - '.github/workflows/get-stdout.yaml'
+
+jobs:
+  mainJob:
+    name: Get stdout
+    runs-on: ubuntu-latest
+    
+    steps:      
+      - name: Do something
+        id: do-something
+        run: |
+          echo "doing something"          
+      - name: Debug Step Failure
+        if: always()
+        run: |
+          echo stdout:\n${{ steps.do-something.outputs.stdout }}
+          echo stderr:\n${{ steps.do-something.outputs.stderr }}
