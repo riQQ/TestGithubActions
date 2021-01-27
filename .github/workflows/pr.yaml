@@ -27,6 +27,6 @@ jobs:
           echo "$githubEvent"
       - name: Get branch name
         shell: bash
-        run: echo "::set-output name=branch::{${{github.head_ref}}#refs/heads/}"
+        run: echo "::set-output name=branch::{${{github.ref}}#refs/heads/}"
         id: get_branch
       - run: echo "${{steps.get_branch.outputs.branch}}"
