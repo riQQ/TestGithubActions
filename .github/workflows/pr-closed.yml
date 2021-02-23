@@ -1,0 +1,13 @@
+name: On PR closed
+on:
+  pull_request:
+    types: [closed]
+        
+jobs:
+  prJob:
+    name: Print event
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{fromJson(github.event)}}"
+          
