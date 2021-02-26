@@ -4,3 +4,12 @@ on:
     branches:
     - master
     - '[a-z]+-[0-9]+'
+
+jobs:
+  myJob:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print something
+      run: echo Test
+      
