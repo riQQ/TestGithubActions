@@ -21,6 +21,7 @@ jobs:
       - run: |
           echo "${{toJson(github.event.pull_request.number)}}"
           githubEvent="${{toJson(github.event.action)}}"
+          
           githubEvent="${githubEvent//'%'/'%25'}"
           githubEvent="${githubEvent//$'\n'/'%0A'}"
           githubEvent="${githubEvent//$'\r'/'%0D'}" 
@@ -30,3 +31,13 @@ jobs:
         run: echo "::set-output name=branch::${${{github.ref}}#refs/heads/}"
         id: get_branch
       - run: echo "${{steps.get_branch.outputs.branch}}"
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: print diff
+        run: |
+          git diff origin/main..HEAD > branches-diff
+          echo "branches-diff = "
+          cat branches-diff
+        
