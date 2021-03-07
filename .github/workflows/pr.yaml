@@ -37,7 +37,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
       - name: print diff
         run: |
-          git diff origin/main..HEAD > branches-diff
+          git diff origin/master..HEAD > branches-diff
           echo "branches-diff = "
           cat branches-diff
         
