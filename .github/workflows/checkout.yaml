@@ -14,4 +14,5 @@ jobs:
         fetch-depth: 2
     - run: |
         ls -a
+        git remote -v
         git diff-tree --no-commit-id -r HEAD
