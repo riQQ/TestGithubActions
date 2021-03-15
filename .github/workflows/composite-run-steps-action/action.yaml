@@ -5,4 +5,5 @@ runs:
   steps: 
   - run: |
       echo "Executing composite run steps action"
+      echo ${{github.action_path}}
     shell: bash
