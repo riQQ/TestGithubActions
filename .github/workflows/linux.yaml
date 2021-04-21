@@ -12,7 +12,7 @@ jobs:
       - run: |
           echo "${GITHUB_REF#refs/heads/}"
           echo "Printing github context"
-          echo "${{ github }}"
+          echo "${{ toJson(github) }}"
           uuidgen
           pwd
           ls
