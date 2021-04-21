@@ -11,6 +11,8 @@ jobs:
     steps:
       - run: |
           echo "${GITHUB_REF#refs/heads/}"
+          echo "Printing github context"
+          echo "${{ github }}"
           uuidgen
           pwd
           ls
