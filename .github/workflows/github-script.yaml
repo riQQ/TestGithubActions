@@ -19,7 +19,7 @@ jobs:
             tag: '1'
           })
           console.log(result)
-          return result
+          return result.data.upload_url
         result-encoding: string
         debug: true
     - name: Get result
