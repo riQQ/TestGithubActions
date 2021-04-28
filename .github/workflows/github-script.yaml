@@ -13,12 +13,13 @@ jobs:
       id: set-result
       with:
         script: |
-          const { upload_url } = await github.repos.getReleaseByTag({
+          const result = await github.repos.getReleaseByTag({
             owner: context.repo.owner,
             repo: context.repo.repo,
             tag: '1'
           })
-          return upload_url
+          console.log(result)
+          return result
         result-encoding: string
         debug: true
     - name: Get result
