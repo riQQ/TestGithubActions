@@ -13,7 +13,7 @@ jobs:
       id: set-result
       with:
         script: |
-          const { upload_url } = await github.issues.getReleaseByTag({
+          const { upload_url } = await github.repos.getReleaseByTag({
             owner: context.repo.owner,
             repo: context.repo.repo,
             tag: '1'
