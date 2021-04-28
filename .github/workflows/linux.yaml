@@ -20,8 +20,8 @@ jobs:
           # print commands
           set -x
           git config --list --show-origin
-          git config --global --get user.name
-          git config --global --get user.email
+          git config --global --get user.name || true
+          git config --global --get user.email || true
       - id: set_var
         run: |
           echo "{\"project\":\"foo\",\"config\":\"Debug\"}" | tee package.json
