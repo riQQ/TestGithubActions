@@ -17,6 +17,8 @@ jobs:
           pwd
           ls
       - run: |
+          # print commands
+          set -x
           git config --list --show-origin
           git config --global --get user.name
           git config --global --get user.email
