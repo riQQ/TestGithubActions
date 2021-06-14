@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["pr"]
+    workflows: ["Manual workflow"]
     types: [completed]
     
 jobs:
