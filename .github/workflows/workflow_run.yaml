@@ -1,0 +1,13 @@
+on:
+  workflow_run:
+    workflows: ["pr"]
+    types: [completed]
+    
+jobs:
+  printJob:    
+    name: Print event
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context        
+      run: |
+        echo "${{ github.event }}"
