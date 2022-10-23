@@ -1,0 +1,16 @@
+name: Try some PowerShell stuff
+on:
+  push:
+    paths:
+      - '.github/workflows/windows-powershell.yaml'
+
+jobs:
+  buildjob:
+    name: Test job
+    runs-on: windows-latest
+    steps:
+      - run: echo ${{github.workspace}}
+      - name: Test some commands
+        run: |
+          echo "bla" >> bla.txt
+          cat bla.txt
