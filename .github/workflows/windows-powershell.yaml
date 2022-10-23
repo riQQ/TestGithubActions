@@ -17,6 +17,6 @@ jobs:
           cat bla.txt
           $msiFilePath = "C:\test.msi"
           echo $Env:GITHUB_OUTPUT
-          echo "{msiFilePath}={$msiFilePath}" >> $Env:GITHUB_OUTPUT
+          echo "msiFilePath=$msiFilePath" >> $Env:GITHUB_OUTPUT
           cat $Env:GITHUB_OUTPUT
       - run: echo ${{ steps.test.outputs.msiFilePath }}
