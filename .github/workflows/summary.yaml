@@ -1,0 +1,13 @@
+name: Test summary
+on:
+  push:
+    paths:
+      - '.github/workflows/artifacts.yaml'
+
+jobs:
+  single-job:
+    name: Set summary
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adding markdown
+        run: echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
