@@ -2,7 +2,7 @@ name: Test summary
 on:
   push:
     paths:
-      - '.github/workflows/artifacts.yaml'
+      - '.github/workflows/summary.yaml'
 
 jobs:
   single-job:
