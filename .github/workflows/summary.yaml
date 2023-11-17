@@ -1,4 +1,4 @@
-name: Test summary
+name: Test summary workflow
 on:
   push:
     paths:
@@ -6,8 +6,10 @@ on:
 
 jobs:
   single-job:
-    name: Set summary
+    name: Set summary job
     runs-on: ubuntu-latest
     steps:
       - name: Adding markdown
         run: echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
+      - name: Adding more markdown
+        run: echo '## Moar! ' >> $GITHUB_STEP_SUMMARY
